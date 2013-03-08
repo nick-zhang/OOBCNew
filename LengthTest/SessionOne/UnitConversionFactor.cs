@@ -1,28 +1,21 @@
+using System.Collections.Generic;
+
 namespace SessionOne
 {
     internal static class UnitConversionFactor
     {
         public static int Get(Unit unit)
         {
-            int conversionFactor;
+            var conversionFactorMap = new Dictionary<Unit, int>
+                                          {
+                                              {Unit.INCH, 1}, 
+                                              {Unit.FEET, 12},
+                                              {Unit.YARD, 12*3},
+                                              {Unit.MILE, 1760*12*3}
+                                          };
 
-            switch (unit)
-            {
-                case Unit.FEET:
-                    conversionFactor = 12;
-                    break;
-                case Unit.YARD:
-                    conversionFactor = 12*3;
-                    break;
-                case Unit.MILE:
-                    conversionFactor = 1760*12*3;
-                    break;
-                default:
-                    conversionFactor = 1;
-                    break;
-            }
 
-            return conversionFactor;
+            return conversionFactorMap[unit];
         }
     }
 }
