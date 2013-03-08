@@ -11,5 +11,11 @@ namespace SessionOneTest
         {
             Assert.AreEqual(new Quantity(12, Unit.INCH), new Quantity(1, Unit.FEET));
         }
+
+        [TestMethod]
+        public void Given3FeetShouldEqal1Yard()
+        {
+            Assert.AreEqual(new Quantity(3, Unit.FEET), new Quantity(1, Unit.YARD));
+        }
     }
 }

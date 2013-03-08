@@ -1,12 +1,24 @@
 namespace SessionOne
 {
-    static internal class UnitAmountConvert
+    internal static class UnitAmountConvert
     {
         public static int GetBasicUnitAmount(Unit unit)
         {
-            var thisBasicUnitAmount = 1;
-            if (unit.Equals(Unit.FEET))
-                thisBasicUnitAmount = 12;
+            int thisBasicUnitAmount;
+
+            switch (unit)
+            {
+                case Unit.FEET:
+                    thisBasicUnitAmount = 12;
+                    break;
+                case Unit.YARD:
+                    thisBasicUnitAmount = 12*3;
+                    break;
+                default:
+                    thisBasicUnitAmount = 1;
+                    break;
+            }
+
             return thisBasicUnitAmount;
         }
     }
