@@ -1,21 +1,43 @@
+using System;
 using System.Collections.Generic;
 
 namespace SessionOne
 {
     internal static class UnitConversionFactor
     {
-        public static int Get(Unit unit)
+        public static int LengthFactor(object unit)
         {
-            var conversionFactorMap = new Dictionary<Unit, int>
+            var conversionFactorMap = new Dictionary<LengthUnit, int>
                                           {
-                                              {Unit.INCH, 1}, 
-                                              {Unit.FEET, 12},
-                                              {Unit.YARD, 12*3},
-                                              {Unit.MILE, 1760*12*3}
+                                              {LengthUnit.INCH, 1}, 
+                                              {LengthUnit.FEET, 12},
+                                              {LengthUnit.YARD, 12*3},
+                                              {LengthUnit.MILE, 1760*12*3}
                                           };
 
+            return conversionFactorMap[(LengthUnit) unit];
+        }
 
-            return conversionFactorMap[unit];
+        public static int Get(object unit)
+        {
+            if (unit is LengthUnit)
+                return LengthFactor(unit);
+
+            if (unit is VolumeUnit)
+                return VolumeFactor(unit);
+                
+            throw new ApplicationException();
+        }
+
+        private static int VolumeFactor(object unit)
+        {
+            var conversionFactorMap = new Dictionary<VolumeUnit, int>
+                                          {
+                                              {VolumeUnit.TSP,  1}, 
+                                              {VolumeUnit.TBSP, 3}
+                                          };
+
+            return conversionFactorMap[(VolumeUnit)unit];
         }
     }
 }

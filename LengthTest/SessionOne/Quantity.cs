@@ -3,9 +3,9 @@ namespace SessionOne
     public class Quantity
     {
         private readonly int amount;
-        private readonly Unit unit;
+        private readonly object unit;
 
-        public Quantity(int amount, Unit unit)
+        public Quantity(int amount, object unit)
         {
             this.amount = amount;
             this.unit = unit;

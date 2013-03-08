@@ -1,6 +1,6 @@
 namespace SessionOne
 {
-    public enum Unit
+    public enum LengthUnit
     {
         INCH,
         FEET,

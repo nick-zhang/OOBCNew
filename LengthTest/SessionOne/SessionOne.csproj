@@ -42,8 +42,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Quantity.cs" />
-    <Compile Include="Unit.cs" />
+    <Compile Include="LengthUnit.cs" />
     <Compile Include="UnitConversionFactor.cs" />
+    <Compile Include="VolumeUnit.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
