@@ -16,10 +16,10 @@ namespace SessionOne
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            var thisBasicUnitAmount = UnitAmountConvert.GetBasicUnitAmount(unit);
-            var otherBasicUnitAmount = UnitAmountConvert.GetBasicUnitAmount(other.unit);
+            var thisBasicAmount = UnitConversionFactor.Get(unit);
+            var otherBasicAmount = UnitConversionFactor.Get(other.unit);
 
-            return thisBasicUnitAmount*amount == other.amount*otherBasicUnitAmount;
+            return thisBasicAmount*amount == other.amount*otherBasicAmount;
         }
 
         public override bool Equals(object obj)

@@ -4,6 +4,7 @@ namespace SessionOne
     {
         INCH,
         FEET,
-        YARD
+        YARD,
+        MILE
     }
 }
