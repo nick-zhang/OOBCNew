@@ -34,7 +34,8 @@ namespace SessionOne
             var conversionFactorMap = new Dictionary<VolumeUnit, int>
                                           {
                                               {VolumeUnit.TSP,  1}, 
-                                              {VolumeUnit.TBSP, 3}
+                                              {VolumeUnit.TBSP, 3},
+                                              {VolumeUnit.OZ, 3*2}
                                           };
 
             return conversionFactorMap[(VolumeUnit)unit];
