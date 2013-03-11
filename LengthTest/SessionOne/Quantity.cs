@@ -18,6 +18,9 @@ namespace SessionOne
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
+            if (IsUnitTypeDifferentFrom(other))
+                return false;
+
             var thisAmountFactor = UnitConversionFactor.Get(unit);
             var otherAmountFactor = UnitConversionFactor.Get(other.unit);
 

@@ -23,5 +23,11 @@ namespace SessionOneTest
         {
             Assert.AreEqual(new Quantity(1, VolumeUnit.CUP), new Quantity(8, VolumeUnit.OZ));
         }
+        
+        [TestMethod]
+        public void GivenLengthQuantityShouldNotEqualVolumeQuantity()
+        {
+            Assert.AreNotEqual(new Quantity(1, VolumeUnit.TSP), new Quantity(1, LengthUnit.INCH));
+        }
     }
 }
