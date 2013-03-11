@@ -4,6 +4,7 @@ namespace SessionOne
     {
         TSP,
         TBSP,
-        OZ
+        OZ,
+        CUP
     }
 }

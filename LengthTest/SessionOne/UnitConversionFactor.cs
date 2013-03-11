@@ -35,7 +35,8 @@ namespace SessionOne
                                           {
                                               {VolumeUnit.TSP,  1}, 
                                               {VolumeUnit.TBSP, 3},
-                                              {VolumeUnit.OZ, 3*2}
+                                              {VolumeUnit.OZ, 3*2},
+                                              {VolumeUnit.CUP, 8*3*2}
                                           };
 
             return conversionFactorMap[(VolumeUnit)unit];

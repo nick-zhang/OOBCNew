@@ -17,5 +17,11 @@ namespace SessionOneTest
         {
             Assert.AreEqual(new Quantity(1, VolumeUnit.OZ), new Quantity(2, VolumeUnit.TBSP));
         }
+        
+        [TestMethod]
+        public void Given1CUPShouldEqual8OZ()
+        {
+            Assert.AreEqual(new Quantity(1, VolumeUnit.CUP), new Quantity(8, VolumeUnit.OZ));
+        }
     }
 }
