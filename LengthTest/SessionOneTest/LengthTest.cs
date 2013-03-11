@@ -33,5 +33,14 @@ namespace SessionOneTest
             var threeFeet = new Quantity(3, LengthUnit.FEET);
             Assert.AreEqual(threeFeet, twelveInches.Add(oneFeet));
         }
+        
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException), "Should not add two quantities with different units")]
+        public void ShouldThrowExceptionWhenAddWithDifferentUnits()
+        {
+            var twelveInches = new Quantity(12, LengthUnit.INCH);
+            var twoTBSP = new Quantity(2, VolumeUnit.TBSP);
+            twelveInches.Add(twoTBSP);
+        }
     }
 }

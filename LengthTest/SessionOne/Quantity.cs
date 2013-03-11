@@ -1,3 +1,5 @@
+using System;
+
 namespace SessionOne
 {
     public class Quantity
@@ -40,9 +42,17 @@ namespace SessionOne
 
         public Quantity Add(Quantity quantity)
         {
+            if (IsUnitTypeDifferentFrom(quantity))
+                throw  new ArgumentException();
+
             var thisAmountFactor = UnitConversionFactor.Get(unit);
             var otherAmountFactor = UnitConversionFactor.Get(quantity.unit);
             return  new Quantity(thisAmountFactor*amount+otherAmountFactor*quantity.amount, LengthUnit.INCH);
+        }
+
+        private bool IsUnitTypeDifferentFrom(Quantity quantity)
+        {
+            return unit.GetType().Name != quantity.unit.GetType().Name;
         }
     }
 }
