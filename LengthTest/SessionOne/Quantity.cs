@@ -16,10 +16,10 @@ namespace SessionOne
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            var thisBasicAmount = UnitConversionFactor.Get(unit);
-            var otherBasicAmount = UnitConversionFactor.Get(other.unit);
+            var thisAmountFactor = UnitConversionFactor.Get(unit);
+            var otherAmountFactor = UnitConversionFactor.Get(other.unit);
 
-            return thisBasicAmount*amount == other.amount*otherBasicAmount;
+            return thisAmountFactor*amount == other.amount*otherAmountFactor;
         }
 
         public override bool Equals(object obj)
@@ -36,6 +36,13 @@ namespace SessionOne
             {
                 return (amount*397) ^ unit.GetHashCode();
             }
+        }
+
+        public Quantity Add(Quantity quantity)
+        {
+            var thisAmountFactor = UnitConversionFactor.Get(unit);
+            var otherAmountFactor = UnitConversionFactor.Get(quantity.unit);
+            return  new Quantity(thisAmountFactor*amount+otherAmountFactor*quantity.amount, LengthUnit.INCH);
         }
     }
 }

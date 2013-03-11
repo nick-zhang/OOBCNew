@@ -24,5 +24,14 @@ namespace SessionOneTest
         {
             Assert.AreEqual(new Quantity(1760, LengthUnit.YARD), new Quantity(1, LengthUnit.MILE));
         }
+      
+        [TestMethod]
+        public void Given12InchesAdd2FeetShouldEqal3Feet()
+        {
+            var twelveInches = new Quantity(12, LengthUnit.INCH);
+            var oneFeet = new Quantity(2, LengthUnit.FEET);
+            var threeFeet = new Quantity(3, LengthUnit.FEET);
+            Assert.AreEqual(threeFeet, twelveInches.Add(oneFeet));
+        }
     }
 }
