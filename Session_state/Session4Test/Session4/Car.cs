@@ -2,16 +2,21 @@ namespace Session4
 {
     public class Car
     {
-        private readonly string state;
+        private string state;
 
         public Car(string state)
         {
             this.state = state;
         }
 
+        public Car()
+        {
+            state = "Flameout";
+        }
+
         public string Display()
         {
-            return "Flameout";
+            return state;
         }
 
         public void StepOnGas()
@@ -20,6 +25,11 @@ namespace Session4
 
         public void ShifGear()
         {
+        }
+
+        public void Start()
+        {
+            state = "Started";
         }
     }
 }

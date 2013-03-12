@@ -9,7 +9,7 @@ namespace Session4Test
         [TestMethod]
         public void ShouldDisplayFlameoutAtStart()
         {
-            var car = new Car(string.Empty);
+            var car = new Car();
             var message = car.Display();
             Assert.AreEqual("Flameout", message);
         }
@@ -30,6 +30,15 @@ namespace Session4Test
             car.ShifGear();
             var message = car.Display();
             Assert.AreEqual("Flameout", message);
+        }
+        
+        [TestMethod]
+        public void ShouldDisplayStartedAfterStarting()
+        {
+            var car = new Car();
+            car.Start();
+            var message = car.Display();
+            Assert.AreEqual("Started", message);
         }
     }
 }
