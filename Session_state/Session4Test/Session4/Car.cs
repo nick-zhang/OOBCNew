@@ -21,6 +21,8 @@ namespace Session4
 
         public void StepOnGas()
         {
+            if (state.Equals("Started"))
+                state = "Idle";
         }
 
         public void ShiftGear()

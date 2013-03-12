@@ -49,5 +49,14 @@ namespace Session4Test
             var message = car.Display();
             Assert.AreEqual("GearShifted", message);
         }
+        
+        [TestMethod]
+        public void ShouldDisplayIdleGivenStartedThenStepOnTheGas()
+        {
+            var car = new Car("Started");
+            car.StepOnGas();
+            var message = car.Display();
+            Assert.AreEqual("Idle", message);
+        }
     }
 }
