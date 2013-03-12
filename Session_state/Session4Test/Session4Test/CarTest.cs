@@ -9,7 +9,16 @@ namespace Session4Test
         [TestMethod]
         public void ShouldDisplayFlameoutAtStart()
         {
-            var car = new Car();
+            var car = new Car(string.Empty);
+            var message = car.Display();
+            Assert.AreEqual("Flameout", message);
+        }
+        
+        [TestMethod]
+        public void ShouldDisplayFlameoutGivenFlameoutThenStepOnTheGas()
+        {
+            var car = new Car("Flameout");
+            car.StepOnGas();
             var message = car.Display();
             Assert.AreEqual("Flameout", message);
         }
