@@ -23,6 +23,9 @@ namespace Session4
         {
             if (state.Equals("Started"))
                 state = "Idle";
+
+            if (state.Equals("GearShifted"))
+                state = "Moving";
         }
 
         public void ShiftGear()
