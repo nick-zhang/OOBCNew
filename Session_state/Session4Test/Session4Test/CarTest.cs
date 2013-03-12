@@ -22,5 +22,14 @@ namespace Session4Test
             var message = car.Display();
             Assert.AreEqual("Flameout", message);
         }
+        
+        [TestMethod]
+        public void ShouldDisplayFlameoutGivenFlameoutThenShiftGear()
+        {
+            var car = new Car("Flameout");
+            car.ShifGear();
+            var message = car.Display();
+            Assert.AreEqual("Flameout", message);
+        }
     }
 }

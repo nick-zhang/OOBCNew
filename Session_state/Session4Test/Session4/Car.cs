@@ -17,5 +17,9 @@ namespace Session4
         public void StepOnGas()
         {
         }
+
+        public void ShifGear()
+        {
+        }
     }
 }
