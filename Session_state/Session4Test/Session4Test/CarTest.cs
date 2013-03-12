@@ -27,7 +27,7 @@ namespace Session4Test
         public void ShouldDisplayFlameoutGivenFlameoutThenShiftGear()
         {
             var car = new Car("Flameout");
-            car.ShifGear();
+            car.ShiftGear();
             var message = car.Display();
             Assert.AreEqual("Flameout", message);
         }
@@ -39,6 +39,15 @@ namespace Session4Test
             car.Start();
             var message = car.Display();
             Assert.AreEqual("Started", message);
+        }
+        
+        [TestMethod]
+        public void ShouldDisplayGeareShiftedGivenStartedThenShiftGear()
+        {
+            var car = new Car("Started");
+            car.ShiftGear();
+            var message = car.Display();
+            Assert.AreEqual("GearShifted", message);
         }
     }
 }

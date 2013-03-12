@@ -23,8 +23,10 @@ namespace Session4
         {
         }
 
-        public void ShifGear()
+        public void ShiftGear()
         {
+            if (state.Equals("Started"))
+                state = "GearShifted";
         }
 
         public void Start()
